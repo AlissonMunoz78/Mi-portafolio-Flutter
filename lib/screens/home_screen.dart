@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../widgets/proyecto_card_mini.dart';
+import '../widgets/proyecto_expandible.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -40,6 +41,15 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 16),
+                const ProyectoExpandible(
+                  titulo: 'Proyecto Expandible',
+                  descripcion:
+                    'Resumen del proyecto expandible que muestra más detalles al desplegarse.',
+                  tecnologias: 'Flutter • Dart',
+                  detalles:
+                    'Este proyecto incluye autenticación, base de datos y un panel de administración.',
+                ),
+                const SizedBox(height: 12),
                 Expanded(
                   child: GridView.count(
                     crossAxisCount: 2,
