@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../widgets/proyecto_card.dart';
+import '../widgets/proyecto_card_mini.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -26,29 +26,61 @@ class HomeScreen extends StatelessWidget {
               colors: [Color(0xFFFDFBFF), Color(0xFFF0E9FF)],
             ),
           ),
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.fromLTRB(16, 24, 16, 24),
+          child: Padding(
+            padding: const EdgeInsets.all(16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Text(
+              children: [
+                const Text(
                   'Mis Proyectos',
                   style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.w800,
-                    color: Color.fromARGB(255, 0, 0, 0),
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromARGB(255, 31, 41, 55),
                   ),
                 ),
-                SizedBox(height: 8),
-                Text(
-                  'Una vista limpia de mis trabajos más recientes.',
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Color.fromARGB(255, 55, 55, 56),
+                const SizedBox(height: 16),
+                Expanded(
+                  child: GridView.count(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 12,
+                    mainAxisSpacing: 12,
+                    childAspectRatio: 0.85,
+                    children: const [
+                      ProyectoCardMini(
+                        titulo: 'Sistema de gestión del Museo',
+                        icono: Icons.museum,
+                        descripcion:
+                            'Aplicación web para gestionar inventario, visitantes y donaciones del museo. También permite llevar el registro de pasantes y reservas para grupos.',
+                        tecnologias: 'React • Node.js • Tailwind CSS',
+                        estado: 'En proceso',
+                      ),
+                      ProyectoCardMini(
+                        titulo: 'App de Tareas',
+                        icono: Icons.phone_android,
+                        descripcion:
+                            'Aplicación móvil para gestionar tareas diarias con recordatorios.',
+                        tecnologias: 'Flutter • SQLite',
+                        estado: 'En desarrollo',
+                      ),
+                      ProyectoCardMini(
+                        titulo: 'Tienda E-commerce',
+                        icono: Icons.shopping_cart,
+                        descripcion:
+                            'Tienda virtual con carrito de compras y pasarela de pagos.',
+                        tecnologias: 'React • Node.js • MongoDB',
+                        estado: 'En pausa',
+                      ),
+                      ProyectoCardMini(
+                        titulo: 'Juego Casual',
+                        icono: Icons.videogame_asset,
+                        descripcion: 'Juego casual para dispositivos móviles.',
+                        tecnologias: 'Unity • C#',
+                        estado: 'Completado',
+                      ),
+                    ],
                   ),
                 ),
-                SizedBox(height: 20),
-                ProyectoCard(),
               ],
             ),
           ),

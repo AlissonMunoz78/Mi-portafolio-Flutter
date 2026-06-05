@@ -42,22 +42,21 @@ class ProyectoCard extends StatelessWidget {
               color: const Color(0xFF6F4BC2),
             ),
           ),
-          
+
           const SizedBox(height: 8),
-          
+
           Text(
             'Aplicación web para gestionar inventario, visitantes y donaciones del museo.'
             'También permite llevar el registro de pasantes y reservas para grupo',
             style: TextStyle(
               fontSize: 14,
               color: const Color.fromARGB(255, 120, 118, 122),
-              height: 1.5, // Espacio entre líneas
+              height: 1.5,
             ),
           ),
 
           const SizedBox(height: 16),
-          
-          // Tecnologías usadas (dentro de Chips separadas)
+
           Wrap(
             spacing: 8,
             runSpacing: 8,
